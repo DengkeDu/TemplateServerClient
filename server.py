@@ -14,7 +14,15 @@ class Handler(BaseRequestHandler):
         while True:
             data = self.request.recv(1024)
             if len(data)>0:
+                printdata = data + ":" + address + "\n"
                 print ('The %s ip: %s' % (data,address))
+                filename = "../Connected_machine.txt"
+                if os.path.exists(filename):
+                    mode = "a"
+                else:
+                    mode = "w"
+                with open(filename,mode) as f:
+                    f.write(printdata)
             else:
                 break
 
