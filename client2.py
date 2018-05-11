@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import socket
 
 HOST = '128.224.153.74'
