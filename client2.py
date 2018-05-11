@@ -10,8 +10,6 @@ try:
     s.connect(ADDR)
     data = socket.gethostname()
     s.send(data)
-    data2 = socket.getfqdn()
-    s.send(data2)
     print "connect"
 except socket.error as msg:
     print "Socket Error: %s" % msg
